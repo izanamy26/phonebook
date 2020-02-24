@@ -11,9 +11,5 @@ export default {
             context.commit('getUsersList', userList.results);
         }
         
-    },
-
-    setActiveProfile(context, profile) {
-        context.commit('setActiveProfile' , profile);
     }
 };
