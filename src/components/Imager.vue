@@ -55,13 +55,14 @@
     }
 
     .imager__img_small img,
-    .imager__img_full img{
-        width: 100%;
-        height: 100%;
+    .imager__img_full img {
+        max-width: 100%;
+        max-height: 100%;
+        min-width: 100%;
+        min-height: 100%;
         background: url("../assets/unknown.jpg") 100% 100% no-repeat;
         background-size: cover;
         object-fit: cover;
-        
     }
 
     .imager__img_full__label {
