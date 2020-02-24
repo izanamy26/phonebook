@@ -1,0 +1,19 @@
+import config from '../config/config.js';
+
+export default {
+    async getUsersList(context) {
+        const responce = await fetch(config.url);
+        const userList = await responce.json();
+
+        // const userList = {"results":[{"id": "1", "Phone":"(999) 302-2012","Name":"Татьяна Кириллова","Email":".9@hotmail.com","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-09-05T20:54:44.781Z"},{"id": "2", "Phone":"(524) 456-5778","Name":"Матвей Фомичев","Email":".@yahoo.com","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-09-16T01:31:46.094Z"},{"id": "3", "Phone":"(720) 447-8883","Name":"Виктория Рожкова","Email":"_@yandex.ru","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-12-21T16:07:20.640Z"},{"id": "4", "Phone":"(997) 170-6530","Name":"Кира Комарова","Email":".33@ya.ru","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-12-04T13:41:03.713Z"},{"id": "5", "Phone":"(753) 494-2450","Name":"Тамара Лыткина","Email":"_98@mail.ru","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-10-09T15:26:03.475Z"},{"id": "6", "Phone":"(485) 788-8848","Name":"Василий Третьяков","Email":"_@mail.ru","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-04-09T06:15:03.541Z"},{"id": "7", "Phone":"(475) 541-9126","Name":"Владимир Сидоров","Email":"24@yahoo.com","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-04-14T16:34:55.765Z"},{"id": "8", "Phone":"(980) 632-9418","Name":"Андрей Симонов","Email":"95@mail.ru","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-08-30T03:12:00.314Z"},{"id": "9", "Phone":"(371) 342-9342","Name":"Марина Харитонова","Email":"_23@yandex.ru","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2020-01-16T21:40:56.792Z"},{"id": "10", "Phone":"(834) 159-9979","Name":"Антонина Потапова","Email":".48@yahoo.com","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-09-05T11:08:10.686Z"}, {"id": "11", "Phone":"(999) 302-2012","Name":"Татьяна Кириллова","Email":".9@hotmail.com","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-09-05T20:54:44.781Z"},{"id": "12", "Phone":"(524) 456-5778","Name":"Матвей Фомичев","Email":".@yahoo.com","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-09-16T01:31:46.094Z"},{"id": "13", "Phone":"(720) 447-8883","Name":"Виктория Рожкова","Email":"_@yandex.ru","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-12-21T16:07:20.640Z"},{"id": "14", "Phone":"(997) 170-6530","Name":"Кира Комарова","Email":".33@ya.ru","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-12-04T13:41:03.713Z"},{"id": "15", "Phone":"(753) 494-2450","Name":"Тамара Лыткина","Email":"_98@mail.ru","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-10-09T15:26:03.475Z"},{"id": "16", "Phone":"(485) 788-8848","Name":"Василий Третьяков","Email":"_@mail.ru","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-04-09T06:15:03.541Z"},{"id": "17", "Phone":"(475) 541-9126","Name":"Владимир Сидоров","Email":"24@yahoo.com","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-04-14T16:34:55.765Z"},{"id": "18", "Phone":"(980) 632-9418","Name":"Андрей Симонов","Email":"95@mail.ru","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-08-30T03:12:00.314Z"},{"id": "19", "Phone":"(371) 342-9342","Name":"Марина Харитонова","Email":"_23@yandex.ru","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2020-01-16T21:40:56.792Z"},{"id": "20", "Phone":"(834) 159-9979","Name":"Антонина Потапова","Email":".48@yahoo.com","Photo":"http://lorempixel.com/640/480/people","BirthDate":"2019-09-05T11:08:10.686Z"}]};
+
+        if (userList && userList.results) {
+            context.commit('getUsersList', userList.results);
+        }
+        
+    },
+
+    setActiveProfile(context, profile) {
+        context.commit('setActiveProfile' , profile);
+    }
+};
